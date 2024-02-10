@@ -22,7 +22,7 @@ const SprintDropdownField: React.FC<{
   errors: FieldErrors<FormValues>;
 }> = ({ control, errors }) => {
   const { sprints } = useSprints();
-  const backlog = { id: "backlog", name: "Backlog", status: "PENDING" };
+  const backlog = { id: "backlog", name: "backlog", status: "PENDING" };
 
   return (
     <div className="my-5">

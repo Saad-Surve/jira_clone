@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { BacklogIcon, BoardIcon, DevelopmentIcon, RoadmapIcon } from "./svgs";
+import { backlogIcon, BoardIcon, DevelopmentIcon, RoadmapIcon } from "./svgs";
 import {
   NavigationMenu,
   NavigationMenuLink,
@@ -31,7 +31,7 @@ const Sidebar: React.FC = () => {
     {
       id: "backlog",
       label: "Backlog",
-      icon: BacklogIcon,
+      icon: backlogIcon,
       href: `/project/backlog`,
     },
     {

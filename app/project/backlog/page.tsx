@@ -11,10 +11,10 @@ import {
 } from "@/server/functions";
 
 export const metadata: Metadata = {
-  title: "Backlog",
+  title: "backlog",
 };
 
-const BacklogPage = async () => {
+const backlogPage = async () => {
   const user = await currentUser();
   const queryClient = getQueryClient();
 
@@ -37,4 +37,4 @@ const BacklogPage = async () => {
   );
 };
 
-export default BacklogPage;
+export default backlogPage;

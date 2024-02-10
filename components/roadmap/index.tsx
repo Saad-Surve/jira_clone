@@ -8,11 +8,17 @@ import Split from "react-split";
 import { IssueDetails } from "../issue/issue-details";
 import { notFound } from "next/navigation";
 import { EpicsTable } from "./epics-table";
+import { User } from "@clerk/nextjs/dist/types/server";
 
-const Roadmap: React.FC = () => {
+interface RoadmapProps {
+  user : User |null
+}
+
+const Roadmap: React.FC<RoadmapProps> = ({user}) => {
   const { issueKey, setIssueKey } = useSelectedIssueContext();
   const renderContainerRef = useRef<HTMLDivElement>(null);
 
+  localStorage.setItem('name',`${user?.firstName} ${user?.lastName}`)
   const { project } = useProject();
 
   useLayoutEffect(() => {

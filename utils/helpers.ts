@@ -125,14 +125,14 @@ export function issueTypeNotInFilters({
 export function issueSprintNotInFilters({
   issue,
   sprintIds,
-  excludeBacklog = false,
+  excludebacklog = false,
 }: {
   issue: IssueType;
   sprintIds: string[];
-  excludeBacklog?: boolean;
+  excludebacklog?: boolean;
 }) {
   if (isNullish(issue.sprintId)) {
-    if (sprintIds.length && excludeBacklog) return true;
+    if (sprintIds.length && excludebacklog) return true;
     return false;
   }
   return sprintIds.length && !sprintIds.includes(issue.sprintId);

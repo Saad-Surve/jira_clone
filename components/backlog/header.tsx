@@ -16,7 +16,7 @@ const BacklogHeader: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <div className="flex h-fit flex-col">
       <div className="text-sm text-gray-500">Projects / Nyaydoot</div>
-      <h1>Backlog </h1>
+      <h1>backlog </h1>
       <div className="my-3 flex items-center justify-between">
         <div className="flex items-center gap-x-5">
           <SearchBar search={search} setSearch={setSearch} />
@@ -36,4 +36,4 @@ const BacklogHeader: React.FC<{ project: Project }> = ({ project }) => {
   );
 };
 
-export { BacklogHeader };
+export {BacklogHeader};

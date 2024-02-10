@@ -69,6 +69,8 @@ const Issue: React.FC<{
               data-state={isEditing ? "editing" : "not-editing"}
               className="flex items-center gap-x-1 [&[data-state=editing]]:hidden"
             >
+              
+              {isEpic(issue.parent) ? <EpicName issue={issue.parent} /> : null}
               <Button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -78,7 +80,6 @@ const Issue: React.FC<{
               >
                 <MdEdit className="text-sm" />
               </Button>
-              {isEpic(issue.parent) ? <EpicName issue={issue.parent} /> : null}
             </div>
           </div>
           <IssueContextMenu isEditing={isEditing} className="flex-auto">
@@ -93,6 +94,7 @@ const Issue: React.FC<{
               currentStatus={issue.status}
               issueId={issue.id}
             /> */}
+
             <IssueAssigneeSelect issue={issue} avatarOnly />
             <IssueDropdownMenu issue={issue}>
               <DropdownTrigger

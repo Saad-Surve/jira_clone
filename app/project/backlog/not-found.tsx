@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/container";
 
-const BacklogErrorPage = () => {
+const backlogErrorPage = () => {
   return <Container screen>Project Not Found</Container>;
 };
 
-export default BacklogErrorPage;
+export default backlogErrorPage;

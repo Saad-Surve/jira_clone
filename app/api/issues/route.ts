@@ -35,6 +35,7 @@ const patchIssuesBodyValidator = z.object({
   parentId: z.string().nullable().optional(),
   sprintId: z.string().nullable().optional(),
   isDeleted: z.boolean().optional(),
+  storyPoints: z.number().optional(),
 });
 
 export type PatchIssuesBody = z.infer<typeof patchIssuesBodyValidator>;
@@ -51,6 +52,7 @@ type IssueT = Issue & {
   };
   assignee: DefaultUser | null;
   reporter: DefaultUser | null;
+  storyPoints: number | null;
 };
 
 export type GetIssuesResponse = {
@@ -106,7 +108,7 @@ export async function GET(req: NextRequest) {
     users,
     activeSprints.map((sprint) => sprint.id)
   );
-
+    // console.log(issuesForClient)
   // const issuesForClient = await getIssuesFromServer();
   return NextResponse.json({ issues: issuesForClient });
 }
@@ -218,8 +220,8 @@ export async function PATCH(req: NextRequest) {
           reporterId: valid.reporterId ?? undefined,
           isDeleted: valid.isDeleted ?? undefined,
           sprintId: valid.sprintId === undefined ? undefined : valid.sprintId,
-          parentId: valid.parentId ?? undefined,
-        },
+          parentId: valid.parentId ?? undefined
+          },
       });
     })
   );

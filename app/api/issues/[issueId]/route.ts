@@ -151,3 +151,26 @@ export async function DELETE(req: NextRequest, { params }: ParamsType) {
   // return NextResponse.json<PostIssueResponse>({ issue });
   return NextResponse.json({ issue });
 }
+
+export async function PUT(req: NextRequest,{params}:ParamsType) {
+  // const { userId } = getAuth(req);
+  // if (!userId) return new Response("Unauthenticated request", { status: 403 });
+  // const { success } = await ratelimit.limit(userId);
+  // if (!success) return new Response("Too many requests", { status: 429 });
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const body = await req.json();
+  
+
+  const issue = await prisma.issue.update({
+    where: {
+      id: params.issueId,
+    },
+    data: {
+      storyPoints: body.storyPoints
+    },
+  })
+
+  // return NextResponse.json<PostIssueResponse>({ issue });
+  return NextResponse.json({ issue });
+}

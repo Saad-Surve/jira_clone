@@ -38,7 +38,7 @@ const BoardIcon: React.FC<{ className?: string; size?: number }> = ({
     </svg>
   );
 };
-const BacklogIcon: React.FC<{ className?: string; size?: number }> = ({
+const backlogIcon: React.FC<{ className?: string; size?: number }> = ({
   className,
   size,
 }) => {
@@ -454,7 +454,7 @@ const SubTaskIcon: React.FC<{ className?: string; size?: number }> = ({
 
 export {
   ChildrenTreeIcon,
-  BacklogIcon,
+  backlogIcon,
   BoardIcon,
   RoadmapIcon,
   LightningIcon,

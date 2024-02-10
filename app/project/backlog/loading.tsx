@@ -6,7 +6,7 @@ import {
   TitleSkeleton,
 } from "@/components/skeletons";
 
-const BacklogSkeleton = () => {
+const backlogSkeleton = () => {
   return (
     <div role="status" className="flex animate-pulse flex-col gap-y-4">
       <BreadCrumbSkeleton />
@@ -23,4 +23,4 @@ const BacklogSkeleton = () => {
   );
 };
 
-export default BacklogSkeleton;
+export default backlogSkeleton;

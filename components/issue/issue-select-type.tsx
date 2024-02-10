@@ -16,6 +16,13 @@ import {
 } from "@/components/ui/select";
 import { TooltipWrapper } from "../ui/tooltip";
 import { capitalize } from "@/utils/helpers";
+const map =  {
+  "BUG":"HIGH",
+  "TASK":"MEDIUM",
+  "STORY":"LOW",
+  "SUBTASK":"SUBTASK",
+  "EPIC":"EPIC"
+}
 
 export const ISSUE_TYPES: IssueType["type"][] = ["STORY", "TASK", "BUG"];
 const SUBTASK_OPTIONS: IssueType["type"][] = ["SUBTASK"];
@@ -68,7 +75,7 @@ const IssueSelectType: React.FC<{
                   >
                     <div className="flex">
                       <IssueIcon issueType={type} />
-                      <span className={clsx("px-2 text-xs")}>{type}</span>
+                      <span className={clsx("px-2 text-xs")}>{map[type]}</span>
                     </div>
                   </SelectItem>
                 )

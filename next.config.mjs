@@ -7,7 +7,7 @@
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
-  experimental: { appDir: true },
+  experimental: { appDir: true,serverActions: true},
   redirects: async () => {
     return [
       {
@@ -17,7 +17,7 @@ const config = {
       },
       {
         source: "/",
-        destination: "/project/backlog",
+        destination: "/project/dashboard",
         permanent: true,
       },
     ];

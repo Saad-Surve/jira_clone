@@ -17,7 +17,10 @@ const TopNavbar: React.FC = () => {
           width={25}
           height={25}
         /> */}
-        <span className="text-lg font-bold text-gray-600">ProducTrack</span>
+        
+          <span className="text-2xl font-bolder text-gray-600">ProducTrack</span>
+        
+        
         {/* <Button
           href="https://github.com/sebastianfdz/jira_clone"
           target="_blank"

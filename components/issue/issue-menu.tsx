@@ -99,7 +99,7 @@ const IssueDropdownMenu: React.FC<{
               ...(sprints ?? []),
               {
                 id: "backlog",
-                name: "Backlog",
+                name: "backlog",
                 key: "backlog",
               },
             ].map((sprint) => (

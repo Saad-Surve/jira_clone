@@ -104,9 +104,11 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
           </div>
           <div className="my-2 grid grid-cols-3  items-center">
             <span className="text-sm font-semibold text-gray-600">
-              Story Points
+              {"Story Points "}
+                  {issue.storyPoints? `(${issue.storyPoints})`: 0}
             </span>
-            <input className="" type="numeric" name="storyPoints" id="" />
+                  
+            {/* <input className="" value={issue.storyPoints} type="numeric" name="storyPoints" id="" /> */}
           </div>
         </AccordionContent>
       </AccordionItem>

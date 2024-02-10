@@ -65,7 +65,7 @@ model Issue {
     sprintColor    String?
     creatorId      String
     comments       Comment[]
-    storyPoints    Int?        // Added field for story points
+    storyPoints    Int?         @default(0)       // Added field for story points
     Sprint         Sprint?     @relation(fields: [sprintId], references: [id])
 
     @@unique([key, creatorId])

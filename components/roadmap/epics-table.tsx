@@ -139,7 +139,7 @@ const EpicsAccordion: React.FC<{
             issueSprintNotInFilters({
               issue,
               sprintIds: sprints,
-              excludeBacklog: true,
+              excludebacklog: true,
             })
           ) {
             return false;

@@ -14,7 +14,7 @@ import { currentUser } from "@clerk/nextjs";
 export const metadata: Metadata = {
   title: "Roadmap",
 };
-
+ 
 const RoadmapPage = async () => {
   const user = await currentUser();
   const queryClient = getQueryClient();
@@ -33,7 +33,7 @@ const RoadmapPage = async () => {
 
   return (
     <Hydrate state={dehydratedState}>
-      <Roadmap />
+      <Roadmap user={user}  />
     </Hydrate>
   );
 };

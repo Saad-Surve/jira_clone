@@ -33,7 +33,7 @@ const _SubTaskIcon = () => {
 
 const TaskIcon = () => {
   return (
-    <Icon className="flex items-center justify-center h-fit bg-task">
+    <Icon className="flex items-center justify-center h-fit bg-yellow-500">
       <FaCircle className="p-0.5 text-white" />
     </Icon>
   );

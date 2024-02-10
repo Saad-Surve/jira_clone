@@ -17,7 +17,13 @@ import { CountBall } from "./issue/issue-status-count";
 
 const IssueTypeFilter: React.FC = () => {
   const { issueTypes, setIssueTypes } = useFiltersContext();
-
+  const map =  {
+    "BUG":"HIGH",
+    "TASK":"MEDIUM",
+    "STORY":"LOW",
+    "SUBTASK":"SUBTASK",
+    "EPIC":"EPIC"
+  }
   function onSelectChange(
     e: React.ChangeEvent<HTMLInputElement>,
     issueType: IssueType["type"]
@@ -73,7 +79,7 @@ const IssueTypeFilter: React.FC = () => {
                 <IssueIcon issueType={type} />
                 <TooltipWrapper text={capitalize(type)}>
                   <span className="text-sm text-gray-700">
-                    {capitalize(type)}
+                    {capitalize(map[type])}
                   </span>
                 </TooltipWrapper>
               </div>

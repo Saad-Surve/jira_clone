@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { SelectedIssueProvider } from "@/context/use-selected-issue-context";
 
-const BacklogLayout = ({ children }: { children: React.ReactNode }) => {
+const BacklogLayoutt = ({ children }: { children: React.ReactNode }) => {
   return (
     <Container className="h-full">
       <main className="w-full">
@@ -11,4 +11,4 @@ const BacklogLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default BacklogLayout;
+export default BacklogLayoutt;
