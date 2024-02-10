@@ -63,6 +63,7 @@ export async function getInitialIssuesFromServer(
       limit: 20,
     })
   ).map(filterUserForClient);
+  console.log(users);
   // --------------------------------------------------
 
   const issues = generateIssuesForClient(
@@ -115,7 +116,7 @@ export async function initProject() {
     update: {},
     create: {
       id: "init-project-id-dq8yh-d0as89hjd",
-      name: "Jira Clone Project",
+      name: "Nyaydoot",
       key: "JIRA-CLONE",
     },
   });

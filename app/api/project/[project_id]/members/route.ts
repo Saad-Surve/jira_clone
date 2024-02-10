@@ -41,6 +41,7 @@ export async function GET(req: NextRequest, { params }: MembersParams) {
       limit: 20,
     })
   ).map(filterUserForClient);
+  // console.log(users);
   // --------------------------------------------------
 
   // return NextResponse.json<GetProjectMembersResponse>({ members:users });

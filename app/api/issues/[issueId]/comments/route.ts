@@ -97,14 +97,14 @@ export async function POST(
   });
 
   // USE THIS INSTEAD IF YOU HAVE USERS IN CLERK
-  // const author = await clerkClient.users.getUser(comment.authorId);
-  // const authorForClient = filterUserForClient(author);
+  const author = await clerkClient.users.getUser(comment.authorId);
+  const authorForClient = filterUserForClient(author);
 
-  const authorForClient = await prisma.defaultUser.findUnique({
-    where: {
-      id: comment.authorId,
-    },
-  });
+  // const authorForClient = await prisma.defaultUser.findUnique({
+  //   where: {
+  //     id: comment.authorId,
+  //   },
+  // });
 
   return NextResponse.json({
     comment: {

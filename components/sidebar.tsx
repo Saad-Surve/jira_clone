@@ -41,29 +41,29 @@ const Sidebar: React.FC = () => {
     },
   ];
 
-  const developmentItems = [
-    {
-      id: "development",
-      label: "Development",
-      icon: DevelopmentIcon,
-      href: `/project/`,
-    },
-  ];
+  // const developmentItems = [
+  //   {
+  //     id: "development",
+  //     label: "Development",
+  //     icon: DevelopmentIcon,
+  //     href: `/project/`,
+  //   },
+  // ];
   return (
     <div className="flex h-full w-64 flex-col gap-y-5 bg-gray-50 p-3 shadow-inner">
       <div className="my-5 flex items-center gap-x-2 px-3">
-        <div className="mt-1 flex items-center justify-center rounded-sm bg-[#FF5630] p-1 text-xs font-bold text-white">
+        {/* <div className="mt-1 flex items-center justify-center rounded-sm bg-[#FF5630] p-1 text-xs font-bold text-white">
           <FaChessPawn className="aspect-square text-2xl" />
-        </div>
+        </div> */}
         <div>
           <h2 className="-mb-[0.5px] text-sm font-semibold text-gray-600">
-            {project?.name ?? "Project Name"}
+            {"Nyaydoot"}
           </h2>
-          <p className="text-xs text-gray-500">Software Project</p>
+          {/* <p className="text-xs text-gray-500">Software Project</p> */}
         </div>
       </div>
       <NavList label={"PLANNING"} items={planningItems} />
-      <NavList label={"DEVELOPMENT"} items={developmentItems} />
+      {/* <NavList label={"DEVELOPMENT"} items={developmentItems} /> */}
     </div>
   );
 };

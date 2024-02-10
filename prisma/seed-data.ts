@@ -331,22 +331,22 @@ export function generateInitialUserIssues(userId: string): Issue[] {
 export const defaultUsers = [
   {
     id: "user_2PwZmH2xP5aE0svR6hDH4AwDlcu",
-    name: "Joe Rogan",
-    email: "joe.rogan@jira.com",
+    name: "Ankit Mishra",
+    email: "ankit.mishra@spit.ac.in",
     avatar:
       "https://images.clerk.dev/uploaded/img_2PwZslOi493tjduHiBADgDxhHlg.png",
   },
   {
     id: "user_2PwYvTgm6kvgJIbWwN0xsei8izu",
-    name: "Steve Jobs",
-    email: "steve.jobs@jira.com",
+    name: "Saad Surve",
+    email: "saad.surve@spit.ac.in",
     avatar:
       "https://images.clerk.dev/uploaded/img_2PwjGSsR9nGqEhAyt5nydgXhBI1.webp",
   },
   {
     id: "user_2PvBRngdvenUlFvQNAWbXIvYVy5",
-    name: "Sheldon Cooper",
-    email: "sheldon.cooper@jira.com",
+    name: "Yusuf Sodawala",
+    email: "yusuf.sodawala@spit.ac.in",
     avatar:
       "https://images.clerk.dev/uploaded/img_2Pwinee7Eg6qoSgqailCZSJt3uS.webp",
   },

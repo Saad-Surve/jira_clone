@@ -98,6 +98,7 @@ export async function GET(req: NextRequest) {
       limit: 10,
     })
   ).map(filterUserForClient);
+  // console.log(users)
   // --------------------------------------------------
 
   const issuesForClient = generateIssuesForClient(

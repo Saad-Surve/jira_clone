@@ -16,7 +16,7 @@ export const EditorComposer: React.FC<{
   return (
     <LexicalComposer
       initialConfig={{
-        namespace: "Jira Clone",
+        namespace: "ProducTrack",
         editorState: JSON.stringify(jsonState),
         editable: !readonly,
         theme: theme,

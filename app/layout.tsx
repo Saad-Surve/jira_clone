@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Jira",
     "Next.js",
     "React",
     "Tailwind CSS",
@@ -23,17 +22,11 @@ export const metadata: Metadata = {
     "Clerk",
     "TanStack",
   ],
-  authors: [
-    {
-      name: "Sebastian Fernandez",
-      url: "https://sebastianfdz.com",
-    },
-  ],
   creator: "Sebastian Fernandez",
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
+    locale: "en_IN",
+    // url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
