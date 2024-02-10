@@ -26,6 +26,7 @@ const BoardPage = async () => {
       getInitialSprintsFromServer(user?.id)
     ),
     await queryClient.prefetchQuery(["project"], getInitialProjectFromServer),
+    
   ]);
 
   const dehydratedState = dehydrate(queryClient);

@@ -63,7 +63,6 @@ export async function getInitialIssuesFromServer(
       limit: 20,
     })
   ).map(filterUserForClient);
-  console.log(users);
   // --------------------------------------------------
 
   const issues = generateIssuesForClient(
@@ -72,6 +71,32 @@ export async function getInitialIssuesFromServer(
     activeSprints.map((sprint) => sprint.id)
   );
   return issues;
+}
+
+export async function getInitialMembers(
+) {
+  
+
+  // USE THIS IF RUNNING LOCALLY ----------------------
+  // const users = await prisma.defaultUser.findMany({
+  //   where: {
+  //     id: {
+  //       in: userIds,
+  //     },
+  //   },
+  // });
+  // --------------------------------------------------
+
+  // COMMENT THIS IF RUNNING LOCALLY ------------------
+  const users = (
+    await clerkClient.users.getUserList({
+      // userId: userIds,
+      limit: 20,
+    })
+  ).map(filterUserForClient);
+  // console.log(users);
+  // --------------------------------------------------
+  return users;
 }
 
 export async function getInitialProjectFromServer() {

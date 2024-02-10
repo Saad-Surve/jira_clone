@@ -88,11 +88,11 @@ const Issue: React.FC<{
             {hasChildren(issue) ? (
               <ChildrenTreeIcon className="p-0.5 text-gray-600" />
             ) : null}
-            <IssueSelectStatus
+            {/* <IssueSelectStatus
               key={issue.id + issue.status}
               currentStatus={issue.status}
               issueId={issue.id}
-            />
+            /> */}
             <IssueAssigneeSelect issue={issue} avatarOnly />
             <IssueDropdownMenu issue={issue}>
               <DropdownTrigger

@@ -1,8 +1,10 @@
+
 import { type GetProjectResponse } from "@/app/api/project/route";
 import axios from "axios";
 import { filterUserForClient, getBaseUrl } from "../helpers";
 import { type GetProjectMembersResponse } from "@/app/api/project/[project_id]/members/route";
 import { clerkClient } from "@clerk/nextjs";
+import { getInitialMembers } from "@/server/functions";
 
 const baseUrl = getBaseUrl();
 
@@ -11,7 +13,7 @@ export const projectRoutes = {
     const { data } = await axios.get<GetProjectResponse>(
       `${baseUrl}/api/project`
     );
-    return data?.project;
+    return data?.project;   
   },
   getMembers: async ({ project_id }: { project_id: string }) => {
     // const users = (
@@ -22,14 +24,32 @@ export const projectRoutes = {
     // console.log('project'+users)
     // const users = (await clerkClient.clients.getClientList()).map(filterUserForClient);
     // console.log('dddd'+clerkClient.users)
-    const user = [
+    // const user = await getInitialMembers();
+    return [
       {
-        id: '1',
-        email: ';',
-        name: 'test',
-        avatar: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50',
+        id: 'user_2cBFpLAIe1jGsSDDCvPFyD6UoPc',
+        name: 'Yusuf Sodawala',
+        email: 'youzarsifsodawala7@gmail.com',
+        avatar: 'https://www.gravatar.com/avatar?d=mp'
+      },
+      {
+        id: 'user_2cBCu6vGu3b6Iz10tMExJmA3NWg',
+        name: 'Saad Surve',
+        email: 'saad.surve@spit.ac.in',
+        avatar: 'https://www.gravatar.com/avatar?d=mp'
+      },
+      {
+        id: 'user_2cBBYNr9chGBq81L7MoqrIFJzEU',
+        name: 'Ankit Mishra',
+        email: 'ankitmishra21022003@gmail.com',
+        avatar: 'https://www.gravatar.com/avatar?d=mp'
+      },
+      {
+        id: 'user_2cBAnqkdGtF0DDHPEku2yXER2v7',
+        name: 'Saad Surve',
+        email: 'saadsurve131702@gmail.com',
+        avatar: 'https://www.gravatar.com/avatar?d=mp'
       }
-    ]
-    return user;
+    ];
   },
 };

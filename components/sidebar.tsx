@@ -64,19 +64,25 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
       {/* <NavList label={"PLANNING"} items={planningItems} /> */}
-      // @refresh reset
-      <h2 className="mb-8">PLANNING</h2>
+      
+      <h2 className="mb-4">PLANNING</h2>
       
       { 
         planningItems.map((item,idx)=>{
           console.log(item);
+          console.log(process.env)
           const currentPath = usePathname();
 
           if(currentPath === item.href){
             return (
               
               <div className="w-full rounded-lg font-bold hover:cursor-not-allowed flex border-transparent border-l-blue-700 bg-blue-100 text-blue-700">
-                <a key={item.id} href={item.href} className="flex w-full items-center gap-x-3 border-l-4 border-transparent px-2 py-2">
+                <a key={item.id} href={item.href} className="flex w-full items-center gap-x-1 border-l-4 border-transparent px-2 py-2">
+                <span className="font-bolder text-lg text-blue-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke="currentColor" fill="currentColor" strokeWidth={0}>
+                    <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+                  </svg>
+                </span>
                 <item.icon />
                 <span className="text-sm">{item.label}</span>
               </a>
@@ -85,7 +91,12 @@ const Sidebar: React.FC = () => {
           }else {
             return (
               <div className="w-full rounded-lg text-gray-600 hover:cursor-not-allowed flex ">
-                <a key={item.id} href={item.href} className="flex w-full items-center gap-x-3 border-l-4 border-transparent px-2 py-2">
+                <a key={item.id} href={item.href} className="flex w-full items-center gap-x-1 border-l-4 border-transparent px-2 py-2">
+                <span className="font-bolder text-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                    <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+                  </svg>
+                </span>
                 <item.icon />
                 <span className="text-sm">{item.label}</span>
               </a>

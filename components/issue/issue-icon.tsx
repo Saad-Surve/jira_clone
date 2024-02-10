@@ -1,6 +1,8 @@
 import { type ReactNode } from "react";
 import { BsBookmarkFill, BsFillRecordFill } from "react-icons/bs";
-import { FaCheck } from "react-icons/fa";
+// import { FaSquare } from "react-icons/tb";
+import { FaCircle } from "react-icons/fa";
+import { FaSquare } from "react-icons/fa";
 import { HiLightningBolt } from "react-icons/hi";
 import clsx from "clsx";
 import { type Issue as IssueType } from "@prisma/client";
@@ -23,40 +25,40 @@ const Icon: React.FC<{ children: ReactNode; className?: string }> = ({
 
 const _SubTaskIcon = () => {
   return (
-    <Icon className="h-fit bg-task">
-      <SubTaskIcon className="text-white" />
+    <Icon className="flex items-center justify-center h-fit bg-task">
+      <FaCircle className="p-0.5 text-white" />
     </Icon>
   );
 };
 
 const TaskIcon = () => {
   return (
-    <Icon className="h-fit bg-task">
-      <FaCheck className=" p-0.5 text-white" />
+    <Icon className="flex items-center justify-center h-fit bg-task">
+      <FaCircle className="p-0.5 text-white" />
     </Icon>
   );
 };
 
 const StoryIcon = () => {
   return (
-    <Icon className="h-fit bg-story">
-      <BsBookmarkFill className="p-0.5" />
+    <Icon className="flex items-center justify-center h-fit bg-story">
+      <FaCircle className="p-0.5" />
     </Icon>
   );
 };
 
 const BugIcon = () => {
   return (
-    <Icon className="h-fit bg-bug">
-      <BsFillRecordFill />
+    <Icon className="flex items-center justify-center h-fit bg-bug">
+      <FaCircle className="p-0.5" />
     </Icon>
   );
 };
 
 const EpicIcon = () => {
   return (
-    <Icon className="h-fit bg-epic">
-      <HiLightningBolt />
+    <Icon className="flex items-center justify-center h-fit bg-epic">
+      <FaCircle className="p-0.5" />
     </Icon>
   );
 };

@@ -87,6 +87,7 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
               </span>
             </div>
           </div>
+          
           <div className="my-2 grid grid-cols-3  items-center">
             <span className="text-sm font-semibold text-gray-600">
               Reporter
@@ -100,6 +101,12 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
                 {issue.reporter?.name}
               </span>
             </div>
+          </div>
+          <div className="my-2 grid grid-cols-3  items-center">
+            <span className="text-sm font-semibold text-gray-600">
+              Story Points
+            </span>
+            <input className="" type="numeric" name="storyPoints" id="" />
           </div>
         </AccordionContent>
       </AccordionItem>

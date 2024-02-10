@@ -161,11 +161,11 @@ const ChildIssue: React.FC<{ issue: IssueType }> = ({ issue }) => {
       </IssueContextMenu>
       <div className="relative ml-2 flex min-w-fit items-center justify-end gap-x-2">
         <IssueAssigneeSelect issue={issue} avatarSize={20} avatarOnly />
-        <IssueSelectStatus
+        {/* <IssueSelectStatus
           key={issue.id + issue.status}
           currentStatus={issue.status}
           issueId={issue.id}
-        />
+        /> */}
       </div>
     </div>
   );

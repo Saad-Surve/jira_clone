@@ -48,14 +48,14 @@ const Members = () => {
         );
       })}
 
-      <NotImplemented feature="add people">
+      {/* <NotImplemented feature="add people">
         <button>
           <AddPeopleIcon
             className="ml-3 rounded-full bg-gray-200 p-1 text-gray-500"
             size={35}
           />
         </button>
-      </NotImplemented>
+      </NotImplemented> */}
     </div>
   );
 };

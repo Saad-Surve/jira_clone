@@ -5,6 +5,7 @@ import { dehydrate } from "@tanstack/query-core";
 import { Roadmap } from "@/components/roadmap";
 import {
   getInitialIssuesFromServer,
+  getInitialMembers,
   getInitialProjectFromServer,
   getInitialSprintsFromServer,
 } from "@/server/functions";

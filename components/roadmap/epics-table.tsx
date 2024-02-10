@@ -234,11 +234,11 @@ const EpicsAccordion: React.FC<{
                     <span className="text-sm">{child.name}</span>
                   </div>
                   <div className="flex items-center gap-x-2 pr-2">
-                    <IssueSelectStatus
+                    {/* <IssueSelectStatus
                       key={child.key + child.status}
                       currentStatus={child.status}
                       issueId={child.key}
-                    />
+                    /> */}
                     <IssueAssigneeSelect
                       issue={child}
                       avatarSize={18}
