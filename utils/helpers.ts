@@ -1,6 +1,5 @@
 import { type IssueCountType } from "./types";
 import { type IssueType } from "@/utils/types";
-import type { User as ClerkUser } from "@clerk/nextjs/dist/api";
 import { type DefaultUser, type Issue } from "@prisma/client";
 
 export function getBaseUrl() {
@@ -65,7 +64,7 @@ export function isNullish<T>(
   return value == null || value == undefined;
 }
 
-export function filterUserForClient(user: ClerkUser) {
+export function filterUserForClient(user: any) {
   return <DefaultUser>{
     id: user.id,
     name: `${user.firstName ?? ""} ${user.lastName ?? ""}`,

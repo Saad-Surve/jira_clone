@@ -59,7 +59,7 @@ export async function getInitialIssuesFromServer(
   // COMMENT THIS IF RUNNING LOCALLY ------------------
   const users = (
     await clerkClient.users.getUserList({
-      userId: userIds,
+      // userId: userIds,
       limit: 20,
     })
   ).map(filterUserForClient);

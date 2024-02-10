@@ -26,8 +26,8 @@ const NotImplemented: React.FC<{ children: ReactNode; feature?: string }> = ({
             <h1 className="text-sm font-semibold">Not implemented</h1>
             <p className="max-w-32 flex text-xs text-gray-500">
               {feature
-                ? ` . The ${feature} feature is not implemented.`
-                : " . This feature is not implemented."}
+                ? `The ${feature} feature is not implemented.`
+                : "This feature is not implemented."}
             </p>
             {/* <div className="mt-2 flex items-center gap-x-2">
               <AiFillGithub className="text-2xl" />

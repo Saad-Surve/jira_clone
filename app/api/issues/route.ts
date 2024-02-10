@@ -94,7 +94,7 @@ export async function GET(req: NextRequest) {
   // COMMENT THIS IF RUNNING LOCALLY ------------------
   const users = (
     await clerkClient.users.getUserList({
-      userId: userIds,
+      // userId: userIds,
       limit: 10,
     })
   ).map(filterUserForClient);

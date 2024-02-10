@@ -14,6 +14,7 @@ export const useProject = () => {
       enabled: !!project?.id,
     }
   );
+  console.log(members)
 
   return {
     project,
