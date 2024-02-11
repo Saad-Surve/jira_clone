@@ -11,6 +11,7 @@ import {
 } from "chart.js";
 import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
+import Gantt from '../../../components/GanttChart/GanttChart'
 
 // Register ChartJS components using ChartJS.register
 ChartJS.register(
@@ -39,7 +40,7 @@ function page() {
 
   console.log()
   return (
-    <div className="flex items-center h-screen justify-center w-full ">
+    <div className="h-calc() w-full">
       {/* line chart */}
       <div className="w-1/2 h-1/2">
         Product Burndown Chart
@@ -63,6 +64,9 @@ function page() {
           ],
         }}
       />
+      <div className="">
+      <Gantt />
+      </div>
     </div>
     </div>
   )
