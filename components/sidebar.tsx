@@ -69,8 +69,6 @@ const Sidebar: React.FC = () => {
       
       { 
         planningItems.map((item,idx)=>{
-          console.log(item);
-          console.log(process.env)
           const currentPath = usePathname();
 
           if(currentPath === item.href){

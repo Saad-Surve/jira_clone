@@ -94,7 +94,6 @@ export async function getInitialMembers(
       limit: 20,
     })
   ).map(filterUserForClient);
-  // console.log(users);
   // --------------------------------------------------
   return users;
 }

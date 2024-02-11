@@ -25,7 +25,6 @@ export const issuesRoutes = {
       `${baseUrl}/api/issues`,
       { signal }
     );
-    console.log(data?.issues)
     return data?.issues;
   },
   updateBatchIssues: async (body: PatchIssuesBody) => {
