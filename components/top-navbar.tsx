@@ -19,6 +19,7 @@ const TopNavbar: React.FC = () => {
         /> */}
 
         <a
+          href="/project/dashboard"
           className="font-bolder text-2xl text-gray-600"
         >
           ProducTrack
