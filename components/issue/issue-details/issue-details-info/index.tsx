@@ -121,8 +121,8 @@ const LargeIssueDetails = React.forwardRef<
   const nameRef = useRef<HTMLInputElement>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [isAddingChildIssue, setIsAddingChildIssue] = useState(false);
-
-  return (
+  console.log(issue)
+  return ( 
     <Split
       sizes={[60, 40]}
       gutterSize={2}

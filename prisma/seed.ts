@@ -19,11 +19,11 @@ async function main() {
   // Create default project members
   await initDefaultProjectMembers();
   // Create default issues
-  await initDefaultIssues("");
-  // Create comments for default issues
-  await initDefaultIssueComments("");
-  // Create default sprints
-  await initDefaultSprints("");
+  // await initDefaultIssues("");
+  // // Create comments for default issues
+  // await initDefaultIssueComments("");
+  // // Create default sprints
+  // await initDefaultSprints("");
 }
 main()
   .then(async () => {

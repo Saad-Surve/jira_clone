@@ -13,7 +13,7 @@ const IssueDetails: React.FC<{
   const { issues } = useIssues();
   const renderContainerRef = React.useRef<HTMLDivElement>(null);
   const [isInViewport, viewportRef] = useIsInViewport({ threshold: 1 });
-
+  console.log(issues)
   const getIssue = useCallback(
     (issueKey: string | null) => {
       return issues?.find((issue) => issue.key === issueKey);

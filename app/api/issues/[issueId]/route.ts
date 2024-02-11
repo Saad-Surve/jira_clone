@@ -160,7 +160,9 @@ export async function PUT(req: NextRequest,{params}:ParamsType) {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const body = await req.json();
-  
+  console.log("body", body);
+  console.log(params.issueId)
+
 
   const issue = await prisma.issue.update({
     where: {
