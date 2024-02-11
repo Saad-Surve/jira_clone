@@ -7,7 +7,7 @@ import { AddPeopleIcon } from "./svgs";
 
 const Members = () => {
   const { members } = useProject();
-  console.log('from members.tsx'+members)
+  // console.log('from members.tsx'+members)
   const { assignees, setAssignees } = useFiltersContext();
   const unassigned = {
     id: "unassigned",

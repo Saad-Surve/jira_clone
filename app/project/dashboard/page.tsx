@@ -10,34 +10,31 @@ const Dashboard = async () => {
           <Link href="/openSRS">View SRS</Link>
         </button>
         <div className="my-8 grid grid-cols-2 gap-x-6">
-          <div className="my-3 flex items-center justify-center bg-gray-200">
+          <div className="my-3 flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 text-lg text-white">
             <Link
               href="/project/roadmap"
-              className="p-12 text-lg font-semibold text-gray-800"
+              className="p-20 text-lg font-semibold "
             >
               Roadmap
             </Link>
           </div>
-          <div className="my-3 flex items-center justify-center bg-gray-200">
+          <div className="my-3 flex items-center justify-center bg-gradient-to-r from-sky-500 to-indigo-500 text-lg text-white">
             <Link
               href="/project/backlog"
-              className="p-12 text-lg font-semibold text-gray-800"
+              className="p-20 text-lg font-semibold "
             >
               Backlog
             </Link>
           </div>
-          <div className="my-3 flex items-center justify-center bg-gray-200">
-            <Link
-              href="/project/board"
-              className="p-12 text-lg font-semibold text-gray-800"
-            >
+          <div className="my-3 flex items-center justify-center bg-gradient-to-r from-purple-500 to-pink-500 text-lg text-white">
+            <Link href="/project/board" className="p-20 text-lg font-semibold ">
               Board
             </Link>
           </div>
-          <div className="my-3 flex items-center justify-center bg-gray-200">
+          <div className="my-3 flex items-center justify-center bg-gradient-to-r from-fuchsia-500 to-violet-500 text-lg text-white">
             <Link
               href="/project/charts"
-              className="p-12 text-lg font-semibold text-gray-800"
+              className="p-20 text-lg font-semibold "
             >
               Charts
             </Link>

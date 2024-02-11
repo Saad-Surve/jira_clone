@@ -68,8 +68,8 @@ const Sidebar: React.FC = () => {
       <h2 className="mb-4">PLANNING</h2>
 
       {planningItems.map((item, idx) => {
-        console.log(item);
-        console.log(process.env);
+        // console.log(item);
+        // console.log(process.env);
         const currentPath = usePathname();
 
         if (currentPath === item.href) {
