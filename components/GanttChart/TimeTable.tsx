@@ -7,7 +7,7 @@ import {
   createFormattedDateFromDate,
   dayDiff,
 } from '../../helpers/dateFunctions';
-import { months } from '../gantt-chart-nextjs-starter/constants';
+import { months } from '../../constants';
 
 export default function TimeTable({
   timeRange,
