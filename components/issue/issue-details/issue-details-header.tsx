@@ -21,7 +21,7 @@ const IssueDetailsHeader: React.FC<{
     >
       <IssuePath issue={issue} setIssueKey={setIssueKey} />
       <div className="relative flex items-center gap-x-0.5">
-        <NotImplemented feature="watch">
+        {/* <NotImplemented feature="watch">
           <Button customColors className="bg-transparent hover:bg-gray-200">
             <MdRemoveRedEye className="text-xl" />
           </Button>
@@ -35,7 +35,7 @@ const IssueDetailsHeader: React.FC<{
           <Button customColors className="bg-transparent hover:bg-gray-200">
             <MdOutlineShare className="text-xl" />
           </Button>
-        </NotImplemented>
+        </NotImplemented> */}
         <IssueDropdownMenu issue={issue}>
           <DropdownTrigger
             asChild

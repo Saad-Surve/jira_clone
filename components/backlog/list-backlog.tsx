@@ -20,7 +20,7 @@ const BacklogList: React.FC<{
   const [openAccordion, setOpenAccordion] = useState("");
 
   useEffect(() => {
-    setOpenAccordion(`Backlogg`); // Open accordion on mount in order for DND to work.
+    setOpenAccordion(`Backlog`); // Open accordion on mount in order for DND to work.
   }, [id]);
 
   return (
@@ -31,7 +31,7 @@ const BacklogList: React.FC<{
       onValueChange={setOpenAccordion}
       collapsible
     >
-      <AccordionItem value={`Backlogg`}>
+      <AccordionItem value={`Backlog`}>
         <BacklogListHeader issues={issues ?? []} />
         <IssueList sprintId={null} issues={issues ?? []} />
       </AccordionItem>
@@ -60,7 +60,7 @@ const BacklogListHeader: React.FC<{ issues: IssueType[] }> = ({ issues }) => {
             aria-hidden
           />
           <div className="flex items-center">
-            <div className="text-semibold">Backlogg</div>
+            <div className="text-semibold">Backlog</div>
             <div className="ml-3 font-normal text-gray-500">
               ({issues.length} issues)
             </div>

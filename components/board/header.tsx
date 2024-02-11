@@ -27,12 +27,13 @@ const BoardHeader: React.FC<{ project: Project }> = ({ project }) => {
           <SprintFilter />
           <ClearFilters />
         </div>
-        <NotImplemented feature="insights">
+        {/* USE THIS */}
+        {/* <NotImplemented feature="insights">
           <Button className="flex items-center gap-x-2">
             <BiLineChart className="text-gray-900" />
             <span className="text-sm text-gray-900">Insights</span>
           </Button>
-        </NotImplemented>
+        </NotImplemented> */}
       </div>
     </div>
   );

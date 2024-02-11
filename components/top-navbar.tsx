@@ -14,13 +14,17 @@ const TopNavbar: React.FC = () => {
         {/* <Image
           src="https://cdn.worldvectorlogo.com/logos/jira-3.svg"
           alt="Jira logo"
-          width={25}
+          width={25axios";
           height={25}
         /> */}
-        
-          <span className="text-2xl font-bolder text-gray-600">ProducTrack</span>
-        
-        
+
+        <a
+          href="/project/dashboard"
+          className="font-bolder text-2xl text-gray-600"
+        >
+          ProducTrack
+        </a>
+
         {/* <Button
           href="https://github.com/sebastianfdz/jira_clone"
           target="_blank"

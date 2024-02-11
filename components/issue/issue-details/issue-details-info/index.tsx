@@ -17,7 +17,7 @@ import { ColorPicker } from "@/components/color-picker";
 import { useContainerWidth } from "@/hooks/use-container-width";
 import Split from "react-split";
 import "@/styles/split.css";
-
+//@refresh restart
 const IssueDetailsInfo = React.forwardRef<
   HTMLDivElement,
   { issue: IssueType | undefined }
@@ -69,24 +69,30 @@ const SmallIssueDetailsInfo = React.forwardRef<
         </h1>
       </div>
 
-      <IssueDetailsInfoActions
-        onAddChildIssue={() => setIsAddingChildIssue(true)}
-      />
-      <div className="relative flex items-center gap-x-3">
-        <IssueSelectStatus
-          key={issue.id + issue.status}
-          currentStatus={issue.status}
-          issueId={issue.id}
-          variant="lg"
-        />
-        <NotImplemented>
+      <div className="flex items-center justify-evenly ">
+        <div className="flex h-6 gap-x-2">
+          Child Issues :
+          <IssueDetailsInfoActions
+            onAddChildIssue={() => setIsAddingChildIssue(true)}
+          />
+        </div>
+        <div className="relative flex items-center gap-x-3 ">
+          Current Status :
+          <IssueSelectStatus
+            key={issue.id + issue.status}
+            currentStatus={issue.status}
+            issueId={issue.id}
+            variant="lg"
+          />
+          {/* <NotImplemented>
           <Button customColors className="hover:bg-gray-200">
             <div className="flex items-center">
               <LightningIcon className="mt-0.5" />
               <span>Actions</span>
             </div>
           </Button>
-        </NotImplemented>
+        </NotImplemented> */}
+        </div>
       </div>
       <Description issue={issue} key={String(issueKey) + issue.id} />
       {hasChildren(issue) || isAddingChildIssue ? (
@@ -168,14 +174,14 @@ const LargeIssueDetails = React.forwardRef<
             issueId={issue.id}
             variant="lg"
           />
-          <NotImplemented>
+          {/* <NotImplemented>
             <Button customColors className="hover:bg-gray-200">
               <div className="flex items-center">
                 <LightningIcon className="mt-0.5" />
                 <span>Actions</span>
               </div>
             </Button>
-          </NotImplemented>
+          </NotImplemented> */}
         </div>
 
         <IssueDetailsInfoAccordion issue={issue} />
