@@ -2,7 +2,7 @@ import { useUser } from "@clerk/nextjs";
 import { FaChevronUp, FaPencilAlt } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { type IssueType } from "@/utils/types";
+import { IssueType } from "@/utils/types"; // Changed from 'type' to 'IssueType'
 import {
   Accordion,
   AccordionContent,
@@ -23,8 +23,10 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
   const [isAuthenticated, openAuthModal] = useIsAuthenticated();
   const { sprints } = useSprints();
   const { user } = useUser();
-  const [openAccordion, setOpenAccordion] = useState("details");
-  const [storyPoints, setStoryPoints] = useState(issue.storyPoints);
+  const [openAccordion, setOpenAccordion] = useState<string>("details"); // Added type declaration for useState
+  const [storyPoints, setStoryPoints] = useState<number | undefined>(
+    issue.storyPoints ?? 0
+  ); // Added type declaration and handling for undefined
 
   function handleAutoAssign() {
     if (!isAuthenticated) {
@@ -40,18 +42,14 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
   }
 
   async function handleStoryPointsBlur() {
-    // Update the issue with new story points
-    const updatedIssue = {
-      ...issue,
-      storyPoints: storyPoints,
-    };
+    console.log("Test 1");
 
     try {
       // Make POST request to update the issue
-      const response = await axios.post(
+      const response = await axios.put(
         `http://localhost:3000/api/issues/${issue.id}`,
         {
-          updatedIssue,
+          storyPoints,
         }
       );
 
@@ -63,6 +61,11 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
     }
   }
 
+  const handleStoryPointsChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setStoryPoints(parseInt(event.target.value)); // Parse input value to integer
+  };
 
   return (
     <Accordion
@@ -110,7 +113,7 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
             <span className="text-sm font-semibold text-gray-600">Sprint</span>
             <div className="flex items-center">
               <span className="text-sm text-gray-700">
-                {sprints?.find((sprint) => sprint?.id == issue.sprintId)
+                {sprints?.find((sprint) => sprint?.id === issue.sprintId)
                   ?.name ?? "None"}
               </span>
             </div>
@@ -135,17 +138,24 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
             <span className="text-sm font-semibold text-gray-600">
               {"Story Points "}
             </span>
-            <span className="ml-2 flex bg-red-500">
+            <span className="max-w-4 ml-2 flex bg-red-500">
               {/* {storyPoints} */}
               <input
-                className="max-w-4 bg-red-500 outline-none"
+                className="max-w-xs outline-none"
                 type="number"
                 name="storyPoints"
                 value={storyPoints ? storyPoints : 0}
-                onChange={handleStoryPointsBlur}
-                // onBlur={handleStoryPointsBlur}
+                onChange={handleStoryPointsChange}
+                onBlur={handleStoryPointsBlur}
               />
-              <FaPencilAlt />
+              <button
+                type="submit"
+                onClick={() => handleStoryPointsBlur}
+                className="font-bold"
+              >
+                Update
+              </button>
+              {/* <FaPencilAlt /> */}
             </span>
           </div>
         </AccordionContent>

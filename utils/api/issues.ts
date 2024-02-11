@@ -55,7 +55,7 @@ export const issuesRoutes = {
     ...body
   }: { issueId: string } & PatchIssueBody) => {
     const { data } = await axios.patch<PatchIssueResponse>(
-      `${baseUrl}/api/issues/${issueId}`,
+      `${baseUrl}/api/issues/${issueId}`, 
       body,
 
       { headers: getHeaders() }
