@@ -12,7 +12,7 @@ const IssueDetailsInfoActions: React.FC<{
 }> = ({ onAddChildIssue, variant = "sm" }) => {
   return (
     <div className="flex gap-x-2 text-gray-700">
-      <NotImplemented feature="attachment">
+      {/* <NotImplemented feature="attachment">
         <Button
           customColors
           className="flex items-center whitespace-nowrap bg-gray-100 hover:bg-gray-200"
@@ -24,8 +24,8 @@ const IssueDetailsInfoActions: React.FC<{
           >
             {variant === "sm" ? null : "Attach"}
           </span>
-        </Button>
-      </NotImplemented>
+        </Button>NotImplemented
+      </NotImplemented> */}
       <TooltipWrapper text="Add child issue">
         <Button
           onClick={onAddChildIssue}
@@ -41,7 +41,7 @@ const IssueDetailsInfoActions: React.FC<{
           </span>
         </Button>
       </TooltipWrapper>
-      <NotImplemented feature="link">
+      {/* <NotImplemented feature="link">
         <Button
           customColors
           className="flex items-center whitespace-nowrap bg-gray-100 hover:bg-gray-200"
@@ -54,15 +54,15 @@ const IssueDetailsInfoActions: React.FC<{
             {variant === "sm" ? null : "Link issue"}
           </span>
         </Button>
-      </NotImplemented>
-      <NotImplemented feature="add apps">
+      </NotImplemented> */}
+      {/* <NotImplemented feature="add apps">
         <Button
           customColors
           className="flex items-center whitespace-nowrap bg-gray-100 hover:bg-gray-200"
         >
           <BsThreeDots className="text-xl" />
         </Button>
-      </NotImplemented>
+      </NotImplemented> */}
     </div>
   );
 };

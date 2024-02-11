@@ -1,5 +1,5 @@
 import { useUser } from "@clerk/nextjs";
-import { FaChevronUp } from "react-icons/fa";
+import { FaChevronUp, FaPencilAlt } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { type IssueType } from "@/utils/types";
@@ -14,6 +14,7 @@ import { useSprints } from "@/hooks/query-hooks/use-sprints";
 import { IssueAssigneeSelect } from "../../issue-select-assignee";
 import { useIssues } from "@/hooks/query-hooks/use-issues";
 import { useIsAuthenticated } from "@/hooks/use-is-authed";
+import axios from "axios";
 
 const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
   issue,
@@ -23,6 +24,7 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
   const { sprints } = useSprints();
   const { user } = useUser();
   const [openAccordion, setOpenAccordion] = useState("details");
+  const [storyPoints, setStoryPoints] = useState(issue.storyPoints);
 
   function handleAutoAssign() {
     if (!isAuthenticated) {
@@ -36,6 +38,39 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
       assigneeId: user!.id,
     });
   }
+
+  async function handleStoryPointsBlur() {
+    // Update the issue with new story points
+    const updatedIssue = {
+      ...issue,
+      storyPoints: storyPoints,
+    };
+
+    try {
+      // Make POST request to update the issue
+      const response = await axios.post(
+        `http://localhost:3000/api/issues/${issue.id}`,
+        {
+          updatedIssue,
+        }
+      );
+
+      // Handle success if needed
+      console.log("Issue updated successfully:", response.data);
+    } catch (error) {
+      // Handle error if needed
+      console.error("Error updating issue:", error);
+    }
+  }
+
+  function handleStoryPointsBlur() {
+    // Update the issue with new story points
+    updateIssue({
+      issueId: issue.id,
+      storyPoints: storyPoints,
+    });
+  }
+
   return (
     <Accordion
       onValueChange={setOpenAccordion}
@@ -87,7 +122,7 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
               </span>
             </div>
           </div>
-          
+
           <div className="my-2 grid grid-cols-3  items-center">
             <span className="text-sm font-semibold text-gray-600">
               Reporter
@@ -102,13 +137,23 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
               </span>
             </div>
           </div>
-          <div className="my-2 grid grid-cols-3  items-center">
+
+          <div className="my-2 grid grid-cols-3 items-center ">
             <span className="text-sm font-semibold text-gray-600">
               {"Story Points "}
-                  {issue.storyPoints? `(${issue.storyPoints})`: 0}
             </span>
-                  
-            {/* <input className="" value={issue.storyPoints} type="numeric" name="storyPoints" id="" /> */}
+            <span className="ml-2 flex bg-red-500">
+              {/* {storyPoints} */}
+              <input
+                className="max-w-4 bg-red-500 outline-none"
+                type="number"
+                name="storyPoints"
+                value={storyPoints ? storyPoints : 0}
+                onChange={(handleStoryPointsChange, issue)}
+                onBlur={handleStoryPointsBlur}
+              />
+              <FaPencilAlt />
+            </span>
           </div>
         </AccordionContent>
       </AccordionItem>

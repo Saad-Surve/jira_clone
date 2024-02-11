@@ -17,7 +17,7 @@ import { useSprints } from "@/hooks/query-hooks/use-sprints";
 
 const SprintDropdown: React.FC = () => {
   const { sprints } = useSprints();
-  const backlog = { id: "backlog", name: "backlog", status: "PENDING" };
+  const backlog = { id: "Backlog", name: "Backlog", status: "PENDING" };
   return (
     <Fragment>
       <Label
