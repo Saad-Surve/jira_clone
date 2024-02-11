@@ -24,7 +24,6 @@ const IssueAssigneeSelect: React.FC<{
   avatarOnly?: boolean;
 }> = ({ issue, avatarSize, avatarOnly = false }) => {
   const { members } = useProject();
-  // console.log('members:',members)
   const { updateIssue, isUpdating } = useIssues();
   const [isAuthenticated, openAuthModal] = useIsAuthenticated();
   const unassigned = {

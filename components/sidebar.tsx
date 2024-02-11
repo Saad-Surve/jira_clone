@@ -66,11 +66,10 @@ const Sidebar: React.FC = () => {
       {/* <NavList label={"PLANNING"} items={planningItems} /> */}
 
       <h2 className="mb-4">PLANNING</h2>
-
-      {planningItems.map((item, idx) => {
-        // console.log(item);
-        // console.log(process.env);
-        const currentPath = usePathname();
+      
+      { 
+        planningItems.map((item,idx)=>{
+          const currentPath = usePathname();
 
         if (currentPath === item.href) {
           return (

@@ -19,7 +19,6 @@ export const useIssues = () => {
       refetchOnMount: false,
     }
   );
-  // console.log(issues)
 
   const { updateIssuesBatch, batchUpdating } = useUpdateIssuesBatch();
   const { updateIssue, isUpdating } = useUpdateIssue();

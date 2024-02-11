@@ -100,7 +100,6 @@ export async function GET(req: NextRequest) {
       limit: 10,
     })
   ).map(filterUserForClient);
-  // console.log(users)
   // --------------------------------------------------
 
   const issuesForClient = generateIssuesForClient(
@@ -108,7 +107,6 @@ export async function GET(req: NextRequest) {
     users,
     activeSprints.map((sprint) => sprint.id)
   );
-    // console.log(issuesForClient)
   // const issuesForClient = await getIssuesFromServer();
   return NextResponse.json({ issues: issuesForClient });
 }

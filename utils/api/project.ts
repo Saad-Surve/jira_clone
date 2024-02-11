@@ -16,15 +16,6 @@ export const projectRoutes = {
     return data?.project;   
   },
   getMembers: async ({ project_id }: { project_id: string }) => {
-    // const users = (
-    //   await clerkClient.users.getUserList({
-    //     limit: 20,
-    //   })
-    // ).map(filterUserForClient);
-    // console.log('project'+users)
-    // const users = (await clerkClient.clients.getClientList()).map(filterUserForClient);
-    // console.log('dddd'+clerkClient.users)
-    // const user = await getInitialMembers();
     return [
       {
         id: 'user_2cBFpLAIe1jGsSDDCvPFyD6UoPc',
