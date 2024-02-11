@@ -63,13 +63,6 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
     }
   }
 
-  function handleStoryPointsBlur() {
-    // Update the issue with new story points
-    updateIssue({
-      issueId: issue.id,
-      storyPoints: storyPoints,
-    });
-  }
 
   return (
     <Accordion
@@ -149,8 +142,8 @@ const IssueDetailsInfoAccordion: React.FC<{ issue: IssueType }> = ({
                 type="number"
                 name="storyPoints"
                 value={storyPoints ? storyPoints : 0}
-                onChange={(handleStoryPointsChange, issue)}
-                onBlur={handleStoryPointsBlur}
+                onChange={handleStoryPointsBlur}
+                // onBlur={handleStoryPointsBlur}
               />
               <FaPencilAlt />
             </span>

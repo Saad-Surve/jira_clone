@@ -67,6 +67,24 @@ const CompleteSprintForm: React.FC<{
       onSubmit={handleSubmit(handleCompleteSprint)}
       className="relative h-full"
     >
+      <span className="text-sm text-gray-500 font-semibold">Share the below google form link with the customers for feedback:</span>
+
+      <div className="flex items-center gap-x-2 mt-2">
+        <a
+          type="text"
+          className="w-full border border-gray-300 rounded-md p-2"
+          href="https://forms.gle/t4g17gEbDkjrSHT47"
+        > 
+          https://forms.gle/t4g17gEbDkjrSHT47  
+        </a>
+        <button 
+          type="button"
+          className="px-3 py-1 bg-gray-100 text-gray-500 rounded-md"
+          onClick={() => navigator.clipboard.writeText("https://forms.gle/t4g17gEbDkjrSHT47")}
+        >
+          Copy
+        </button>
+        </div>
       <SprintDropdownField control={control} errors={errors} />
       <FormSubmit
         submitText="Complete"
